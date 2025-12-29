@@ -1,0 +1,7 @@
+-- HUMAN RESOURCE MACHINE PROGRAM --
+
+whilestart1:
+    INBOX
+    OUTBOX
+    JUMP     whilestart1
+whileend2:

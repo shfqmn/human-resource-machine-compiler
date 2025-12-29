@@ -1,0 +1,88 @@
+-- HUMAN RESOURCE MACHINE PROGRAM --
+
+-- TILES: 25
+-- INIT 24 0
+
+    COPYFROM 24
+    COPYTO   15
+    BUMPUP   15
+whilestart1:
+    INBOX
+    COPYTO   19
+    COPYFROM 24
+    COPYTO   18
+    BUMPUP   18
+    BUMPUP   18
+whilestart3:
+    COPYFROM 18
+    COPYTO   23
+    COPYFROM 23
+    COPYFROM 18
+    COPYTO   21
+    COPYFROM 21
+    COPYFROM 24
+    COPYTO   22
+mulstart6:
+    COPYFROM 21
+    JUMPZ    mulend7
+    COPYFROM 22
+    ADD      23
+    COPYTO   22
+    COPYFROM 22
+    COPYTO   22
+    BUMPDN   21
+    JUMP     mulstart6
+mulend7:
+    COPYFROM 22
+    SUB      19
+    JUMPN    whilebody4
+    JUMPZ    whilebody4
+    JUMP     whileend5
+whilebody4:
+whilestart8:
+    COPYFROM 24
+    COPYTO   17
+    COPYFROM 19
+    COPYTO   16
+whilestart10:
+    COPYFROM 16
+    SUB      18
+    JUMPN    whileend12
+whilebody11:
+    COPYFROM 16
+    SUB      18
+    COPYTO   16
+    BUMPUP   17
+    JUMP     whilestart10
+whileend12:
+    COPYFROM 16
+    JUMPZ    then13
+    JUMP     else14
+then13:
+    COPYFROM 18
+    OUTBOX
+    COPYFROM 17
+    COPYTO   19
+    JUMP     end15
+else14:
+    JUMP     whileend9
+end15:
+    JUMP     whilestart8
+whileend9:
+    BUMPUP   18
+    JUMP     whilestart3
+whileend5:
+    COPYFROM 19
+    COPYTO   23
+    BUMPDN   23
+    COPYFROM 23
+    JUMPZ    else17
+    JUMPN    else17
+then16:
+    COPYFROM 19
+    OUTBOX
+    JUMP     end18
+else17:
+end18:
+    JUMP     whilestart1
+whileend2:

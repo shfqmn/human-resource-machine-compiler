@@ -1,0 +1,88 @@
+-- HUMAN RESOURCE MACHINE PROGRAM --
+
+-- TILES: 10
+whilestart1:
+    INBOX
+    COPYTO   7
+    INBOX
+    COPYTO   6
+    INBOX
+    COPYTO   5
+    COPYFROM 7
+    SUB      6
+    JUMPZ    else4
+    JUMPN    else4
+then3:
+    COPYFROM 6
+    SUB      5
+    JUMPZ    else7
+    JUMPN    else7
+then6:
+    COPYFROM 5
+    OUTBOX
+    COPYFROM 6
+    OUTBOX
+    COPYFROM 7
+    OUTBOX
+    JUMP     end8
+else7:
+    COPYFROM 7
+    SUB      5
+    JUMPZ    else10
+    JUMPN    else10
+then9:
+    COPYFROM 6
+    OUTBOX
+    COPYFROM 5
+    OUTBOX
+    COPYFROM 7
+    OUTBOX
+    JUMP     end11
+else10:
+    COPYFROM 6
+    OUTBOX
+    COPYFROM 7
+    OUTBOX
+    COPYFROM 5
+    OUTBOX
+end11:
+end8:
+    JUMP     end5
+else4:
+    COPYFROM 7
+    SUB      5
+    JUMPZ    else13
+    JUMPN    else13
+then12:
+    COPYFROM 5
+    OUTBOX
+    COPYFROM 7
+    OUTBOX
+    COPYFROM 6
+    OUTBOX
+    JUMP     end14
+else13:
+    COPYFROM 6
+    SUB      5
+    JUMPZ    else16
+    JUMPN    else16
+then15:
+    COPYFROM 7
+    OUTBOX
+    COPYFROM 5
+    OUTBOX
+    COPYFROM 6
+    OUTBOX
+    JUMP     end17
+else16:
+    COPYFROM 7
+    OUTBOX
+    COPYFROM 6
+    OUTBOX
+    COPYFROM 5
+    OUTBOX
+end17:
+end14:
+end5:
+    JUMP     whilestart1
+whileend2:

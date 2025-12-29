@@ -1,0 +1,104 @@
+-- HUMAN RESOURCE MACHINE PROGRAM --
+
+-- TILES: 12
+-- INIT 9 0
+-- INIT 10 10
+-- INIT 11 100
+
+    COPYFROM 9
+    COPYTO   5
+    BUMPUP   5
+whilestart1:
+    INBOX
+    COPYTO   7
+    COPYFROM 7
+    SUB      10
+    JUMPN    then3
+    JUMP     else4
+then3:
+    COPYFROM 7
+    OUTBOX
+    JUMP     end5
+else4:
+    COPYFROM 7
+    SUB      11
+    JUMPN    then6
+    JUMP     else7
+then6:
+    COPYFROM 9
+    COPYTO   6
+whilestart9:
+    COPYFROM 7
+    SUB      10
+    COPYTO   7
+    COPYFROM 6
+    COPYTO   8
+    BUMPUP   8
+    COPYFROM 8
+    COPYTO   6
+    COPYFROM 7
+    SUB      10
+    JUMPN    then11
+    JUMP     else12
+then11:
+    JUMP     whileend10
+    JUMP     end13
+else12:
+end13:
+    JUMP     whilestart9
+whileend10:
+    COPYFROM 6
+    OUTBOX
+    COPYFROM 7
+    OUTBOX
+    JUMP     end8
+else7:
+    COPYFROM 9
+    COPYTO   6
+whilestart14:
+    COPYFROM 7
+    SUB      11
+    COPYTO   7
+    COPYFROM 6
+    COPYTO   8
+    BUMPUP   8
+    COPYFROM 8
+    COPYTO   6
+    COPYFROM 7
+    SUB      11
+    JUMPN    then16
+    JUMP     else17
+then16:
+    JUMP     whileend15
+    JUMP     end18
+else17:
+end18:
+    JUMP     whilestart14
+whileend15:
+    COPYFROM 6
+    OUTBOX
+    COPYFROM 9
+    COPYTO   6
+whilestart19:
+    COPYFROM 7
+    SUB      10
+    JUMPN    whileend21
+whilebody20:
+    COPYFROM 7
+    SUB      10
+    COPYTO   7
+    COPYFROM 6
+    COPYTO   8
+    BUMPUP   8
+    COPYFROM 8
+    COPYTO   6
+    JUMP     whilestart19
+whileend21:
+    COPYFROM 6
+    OUTBOX
+    COPYFROM 7
+    OUTBOX
+end8:
+end5:
+    JUMP     whilestart1
+whileend2:

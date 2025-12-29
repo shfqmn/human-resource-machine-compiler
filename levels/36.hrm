@@ -1,0 +1,158 @@
+-- HUMAN RESOURCE MACHINE PROGRAM --
+
+-- TILES: 25
+-- INIT 23 0
+-- INIT 24 10
+
+    COPYFROM 23
+    COPYTO   16
+    BUMPUP   16
+whilestart1:
+    COPYFROM 23
+    COPYTO   18
+    INBOX
+    COPYTO   17
+whilestart3:
+    COPYFROM 17
+    JUMPZ    whileend5
+whilebody4:
+    COPYFROM 17
+    COPYTO   22
+    COPYFROM 18
+    COPYTO   21
+    COPYFROM 22
+    COPYTO   [21]
+    COPYFROM 18
+    COPYTO   22
+    BUMPUP   22
+    COPYFROM 22
+    COPYTO   18
+    INBOX
+    COPYTO   17
+    JUMP     whilestart3
+whileend5:
+    COPYFROM 18
+    COPYTO   15
+    INBOX
+    COPYTO   17
+whilestart6:
+    COPYFROM 17
+    JUMPZ    whileend8
+whilebody7:
+    COPYFROM 17
+    COPYTO   22
+    COPYFROM 18
+    COPYTO   21
+    COPYFROM 22
+    COPYTO   [21]
+    COPYFROM 18
+    COPYTO   22
+    BUMPUP   22
+    COPYFROM 22
+    COPYTO   18
+    INBOX
+    COPYTO   17
+    JUMP     whilestart6
+whileend8:
+    COPYFROM 23
+    COPYTO   14
+    COPYFROM 15
+    COPYTO   13
+    COPYFROM 23
+    COPYTO   12
+whilestart9:
+    COPYFROM 14
+    SUB      15
+    JUMPZ    then11
+    JUMP     else12
+then11:
+    COPYFROM 16
+    COPYTO   12
+    JUMP     whileend10
+    JUMP     end13
+else12:
+end13:
+    COPYFROM 13
+    SUB      18
+    JUMPZ    then14
+    JUMP     else15
+then14:
+    COPYFROM 23
+    COPYTO   12
+    JUMP     whileend10
+    JUMP     end16
+else15:
+end16:
+    COPYFROM 14
+    COPYTO   22
+    COPYFROM [22]
+    COPYTO   17
+    COPYFROM 13
+    COPYTO   22
+    COPYFROM [22]
+    COPYTO   11
+    COPYFROM 17
+    SUB      11
+    JUMPZ    else18
+then17:
+    COPYFROM 17
+    SUB      11
+    JUMPN    then20
+    JUMP     else21
+then20:
+    COPYFROM 16
+    COPYTO   12
+    JUMP     end22
+else21:
+    COPYFROM 23
+    COPYTO   12
+end22:
+    JUMP     whileend10
+    JUMP     end19
+else18:
+end19:
+    COPYFROM 14
+    COPYTO   22
+    BUMPUP   22
+    COPYFROM 22
+    COPYTO   14
+    COPYFROM 13
+    COPYTO   22
+    BUMPUP   22
+    COPYFROM 22
+    COPYTO   13
+    JUMP     whilestart9
+whileend10:
+    COPYFROM 12
+    JUMPZ    else24
+then23:
+    COPYFROM 23
+    COPYTO   14
+    COPYFROM 15
+    COPYTO   13
+    JUMP     end25
+else24:
+    COPYFROM 15
+    COPYTO   14
+    COPYFROM 18
+    COPYTO   13
+end25:
+whilestart26:
+    COPYFROM 14
+    SUB      13
+    JUMPN    whilebody27
+    JUMP     whileend28
+whilebody27:
+    COPYFROM 14
+    COPYTO   22
+    COPYFROM [22]
+    OUTBOX
+    COPYFROM 14
+    COPYTO   22
+    BUMPUP   22
+    COPYFROM 22
+    COPYTO   14
+    JUMP     whilestart26
+whileend28:
+    JUMP     whilestart1
+whileend2:

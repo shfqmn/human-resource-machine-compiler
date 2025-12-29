@@ -1,0 +1,17 @@
+-- HUMAN RESOURCE MACHINE PROGRAM --
+
+-- TILES: 9
+whilestart1:
+    INBOX
+    COPYTO   4
+    COPYFROM 4
+    JUMPZ    then3
+    JUMP     else4
+then3:
+    COPYFROM 4
+    OUTBOX
+    JUMP     end5
+else4:
+end5:
+    JUMP     whilestart1
+whileend2:

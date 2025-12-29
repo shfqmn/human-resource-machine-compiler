@@ -1,0 +1,26 @@
+-- HUMAN RESOURCE MACHINE PROGRAM --
+
+-- TILES: 15
+-- INIT 0 N
+-- INIT 1 K
+-- INIT 2 A
+-- INIT 3 E
+-- INIT 4 R
+-- INIT 5 D
+-- INIT 6 O
+-- INIT 7 L
+-- INIT 8 Y
+-- INIT 9 J
+-- INIT 12 8
+
+whilestart1:
+    INBOX
+    COPYTO   14
+    COPYFROM 14
+    COPYTO   13
+    COPYFROM [13]
+    COPYTO   11
+    COPYFROM 11
+    OUTBOX
+    JUMP     whilestart1
+whileend2:

@@ -1,0 +1,125 @@
+-- HUMAN RESOURCE MACHINE PROGRAM --
+
+-- TILES: 25
+-- INIT 24 0
+
+    COPYFROM 24
+    COPYTO   15
+    BUMPUP   15
+whilestart1:
+    COPYFROM 24
+    COPYTO   19
+whilestart3:
+    INBOX
+    COPYTO   18
+    COPYFROM 18
+    JUMPZ    then5
+    JUMP     else6
+then5:
+    JUMP     whileend4
+    JUMP     end7
+else6:
+end7:
+    COPYFROM 18
+    COPYTO   23
+    COPYFROM 19
+    COPYTO   22
+    COPYFROM 23
+    COPYTO   [22]
+    BUMPUP   19
+    JUMP     whilestart3
+whileend4:
+    COPYFROM 19
+    JUMPZ    then8
+    JUMP     else9
+then8:
+    JUMP     end10
+else9:
+end10:
+    COPYFROM 24
+    COPYTO   17
+whilestart11:
+    COPYFROM 17
+    SUB      19
+    JUMPN    whilebody12
+    JUMP     whileend13
+whilebody12:
+    COPYFROM 17
+    COPYTO   16
+    COPYFROM 17
+    COPYTO   23
+    BUMPUP   23
+    COPYFROM 23
+    COPYTO   14
+whilestart14:
+    COPYFROM 14
+    SUB      19
+    JUMPN    whilebody15
+    JUMP     whileend16
+whilebody15:
+    COPYFROM 14
+    COPYTO   23
+    COPYFROM [23]
+    COPYTO   13
+    COPYFROM 16
+    COPYTO   23
+    COPYFROM [23]
+    COPYTO   12
+    COPYFROM 13
+    SUB      12
+    JUMPN    then17
+    JUMP     else18
+then17:
+    COPYFROM 14
+    COPYTO   16
+    JUMP     end19
+else18:
+end19:
+    BUMPUP   14
+    JUMP     whilestart14
+whileend16:
+    COPYFROM 16
+    SUB      17
+    JUMPZ    else21
+then20:
+    COPYFROM 17
+    COPYTO   23
+    COPYFROM [23]
+    COPYTO   11
+    COPYFROM 16
+    COPYTO   23
+    COPYFROM [23]
+    COPYTO   23
+    COPYFROM 17
+    COPYTO   22
+    COPYFROM 23
+    COPYTO   [22]
+    COPYFROM 11
+    COPYTO   23
+    COPYFROM 16
+    COPYTO   22
+    COPYFROM 23
+    COPYTO   [22]
+    JUMP     end22
+else21:
+end22:
+    BUMPUP   17
+    JUMP     whilestart11
+whileend13:
+    COPYFROM 24
+    COPYTO   10
+whilestart23:
+    COPYFROM 10
+    SUB      19
+    JUMPN    whilebody24
+    JUMP     whileend25
+whilebody24:
+    COPYFROM 10
+    COPYTO   23
+    COPYFROM [23]
+    OUTBOX
+    BUMPUP   10
+    JUMP     whilestart23
+whileend25:
+    JUMP     whilestart1
+whileend2:

@@ -1,0 +1,151 @@
+-- HUMAN RESOURCE MACHINE PROGRAM --
+
+-- TILES: 16
+-- INIT 14 0
+-- INIT 15 4
+
+    COPYFROM 15
+    ADD      15
+    COPYTO   8
+    COPYFROM 14
+    COPYTO   7
+    BUMPUP   7
+    COPYFROM 15
+    ADD      8
+    COPYTO   6
+    COPYFROM 7
+    COPYTO   5
+    BUMPUP   5
+    COPYFROM 15
+    ADD      6
+    COPYTO   4
+    COPYFROM 15
+    COPYTO   3
+    BUMPDN   3
+whilestart1:
+    INBOX
+    COPYTO   9
+    COPYFROM 9
+    COPYTO   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    COPYFROM 13
+    JUMPN    then3
+    JUMP     else4
+then3:
+    COPYFROM 9
+    OUTBOX
+    COPYFROM 14
+    OUTBOX
+    JUMP     end5
+else4:
+    COPYFROM 9
+    COPYTO   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    COPYFROM 13
+    JUMPN    then6
+    JUMP     else7
+then6:
+    COPYFROM 9
+    COPYTO   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    COPYFROM 13
+    OUTBOX
+    COPYFROM 7
+    OUTBOX
+    JUMP     end8
+else7:
+    COPYFROM 9
+    COPYTO   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    COPYFROM 13
+    JUMPN    then9
+    JUMP     else10
+then9:
+    COPYFROM 9
+    COPYTO   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    COPYFROM 13
+    OUTBOX
+    COPYFROM 5
+    OUTBOX
+    JUMP     end11
+else10:
+    COPYFROM 9
+    COPYTO   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    COPYFROM 13
+    JUMPN    then12
+    JUMP     else13
+then12:
+    COPYFROM 9
+    COPYTO   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    BUMPDN   13
+    COPYFROM 13
+    OUTBOX
+    COPYFROM 3
+    OUTBOX
+    JUMP     end14
+else13:
+end14:
+end11:
+end8:
+end5:
+    JUMP     whilestart1
+whileend2:
