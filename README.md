@@ -75,7 +75,7 @@ You can configure the compiler by defining special variables at the top of your 
 - `tiles`: A list or dictionary defining the initial state and names of floor tiles.
 - `allowed`: A list of strings restricting which HRM opcodes are allowed (useful for mimicking specific game levels).
 - `modifiable_tiles_idx`: A list of tile indices that can be modified during execution.
-  Example ([levels/29.py](levels/29.py)):
+  Example:
 
 ```python
 allowed = ["INBOX", "OUTBOX", "COPYFROM", "COPYTO"]
